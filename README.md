@@ -18,7 +18,7 @@ python manage.py runserver 0.0.0.0:80
 --------------------------------------
 
 
-notice:if you want your new added squirrel be shown on the mainpage, please check the option "have image".
+notice:if you want your new added squirrel to be shown on the mainpage, please check the option "have image".
 
 
 qq:408707751
