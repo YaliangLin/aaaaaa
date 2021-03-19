@@ -7,10 +7,11 @@
 	<a href="/map">See the Squirrels Map</a>
 	<a href="/add">Add a Squirrel</a>
 	<a href="/admin">admin admin admin</a>
+	<a href="/test">TTTTTTTTTTTTTTESTTTTTTTTTTTTTTTTT</a>
     <p>number of squirrels: {{ number }}</p>
 		<ul>
 			{% for squirrel in squirrels %}
-			<li><a href="/stats/{{ squirrel.Unique_Squirrel_ID }}"
+			<li><a href="/status/{{ squirrel.Unique_Squirrel_ID }}"
 			   class="btn btn-warning" id='{{squirrel.Unique_Squirrel_ID}}'>
 			   小松鼠 {{ squirrel.Unique_Squirrel_ID }} 经度 {{ squirrel.xx }} 纬度 {{ squirrel.yy }}
 			</a></li>

@@ -20,13 +20,22 @@ import csv
 import datetime
 import os
 from .models import biaoge
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+from django.contrib import staticfiles, admin
+from django.conf import settings
+from django.conf.urls.static import static
+from django.urls import re_path
+from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.main),
+    path('',views.good),
     path('map/',views.map),
     #path('add/',views.add),
-    path('stats/<str:squirrel_id>/', views.status),
-    path('stats/<str:squirrel_id>/edit/', views.edit),
-    path('add/',views.add),
-]
+    path('status/<str:squirrel_id>/', views.goodview),
+    path('status/<str:squirrel_id>/edit/', views.goodedit),
+    path('add/',views.goodadd),
+    path('success/',views.success),
+    path('mainbase/',views.good),
+    re_path(r'^search/$', views.search, name='search'),
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
