@@ -36,6 +36,7 @@ urlpatterns = [
     path('status/<str:squirrel_id>/edit/', views.goodedit),
     path('add/',views.goodadd),
     path('success/',views.success),
-    path('mainbase/',views.good),
     re_path(r'^search/$', views.search, name='search'),
+    path('overall/',views.overall),
+    path('stats/',views.stats)
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
