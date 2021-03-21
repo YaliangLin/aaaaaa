@@ -83,7 +83,14 @@
 
         {% for sighting in sightings %}
           var point_lat_lon = [{{ sighting.yy }}, {{ sighting.xx }}];
-          var marker = L.marker(point_lat_lon).addTo(map);
+          var squirrelIcon = L.icon({
+            iconUrl: '{%static 'squirrel.svg'%}',
+		        iconSize: [25, 25],
+	          iconAnchor: [10, 10],
+		        popupAnchor: [-20, -20],
+          })
+          var marker = L.marker(point_lat_lon,{icon: squirrelIcon}).addTo(map)
+          .bindPopup("<b>I am a Cute Squirrel!</b><br>my latitude is {{ sighting.xx }}<br>my longtitude is {{ sighting.yy }}.").openPopup();
         {% endfor %}
     </script>
   </body>
