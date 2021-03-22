@@ -22,11 +22,13 @@ python manage.py runserver 0.0.0.0:80
 
 notice:if you want your new added squirrel to be shown on the mainpage, please check the option "have image".
 
+web page here: squirrel.icu
 
 qq:408707751
 
 email:408707751@qq.com
 
-                                          made by zzk（晚秋秋）
-My dear gourpmate, I am happy that you finally find this↑
-web page here: squirrel.icu
+
+My dear gourpmate, I am happy that you finally find this↓
+made by zzk（晚秋秋）
+
