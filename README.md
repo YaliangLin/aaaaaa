@@ -29,6 +29,6 @@ qq:408707751
 email:408707751@qq.com
 
 
-My dear gourpmate, I am happy that you finally find this↓
+My dear gourpmate, I am happy that you finally find this
 made by zzk（晚秋秋）
 
