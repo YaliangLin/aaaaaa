@@ -177,10 +177,3 @@ class biaoge(models.Model):
     
     def __str__(self):
         return self.Unique_Squirrel_ID
-
-class images(models.Model):
-    profile_image = models.ImageField(
-    help_text= ('Profile picture of pet'),
-    blank = True,
-    upload_to = "img/",
-    )

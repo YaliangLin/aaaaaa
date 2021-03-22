@@ -8,22 +8,10 @@ import datetime
 import json
 from django.forms import ModelForm
 from .forms import SquirrelForm
-from .forms import SquirrelImages
-from .models import images
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.views.generic import View
 from django.shortcuts import get_object_or_404 
 
-
-
-def main(request):
-    squirrels = biaoge.objects.order_by('Unique_Squirrel_ID')
-    number = biaoge.objects.count()
-    context = {'squirrels':squirrels,
-               'number': number,
-    }
-
-    return render(request,'htmls/test.html',context)
 
 def map(request):
     sighting100 = random.sample(list(biaoge.objects.all()),100)
@@ -32,43 +20,9 @@ def map(request):
         sighting_list.append({'xx':sighting.xx,'yy':sighting.yy})
     context = {'sightings':sighting_list,}
     return render(request,'htmls/map.html',context)
-
-def edit(request, squirrel_id):
-    squirrel = biaoge.objects.get(pk = squirrel_id)
-    if request.method == 'POST':
-        form = SquirrelForm(request.POST, instance = squirrel)
-        if form.is_valid():
-            form.save()
-            return redirect(f'/success')
-    else:
-        form = SquirrelForm(instance = squirrel)
-        context = {'form':form,}
-    return render(request,'htmls/edit.html',context)
-
-def add(request):
-    if request.method == 'POST':
-        form = SquirrelForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(f'/success')
-    else:
-        form = SquirrelForm()
-        context = {'form':form,}
-    return render(request,'htmls/add.html',context)
-
-
-def status(request, squirrel_id):
-    squirrels = biaoge.objects.get(pk = squirrel_id)
-    context = {'squirrel_id':squirrel_id,
-                'alldata':squirrels
-    }
-    return render(request,'htmls/status.html',context)
     
 def success(request):
     return render(request,'htmls/success.html')
-
-def test(request):
-    return render(request,'htmls/test.html')
 
 def good(request):
     squirrels = biaoge.objects.filter(have_image = True)
@@ -208,20 +162,21 @@ def goodview(request,squirrel_id):
     squirrels = biaoge.objects.get(pk = squirrel_id)
     context = {'squirrels':squirrels,
                'method':'GET',
-               'sssss': 'sssss.jpg'
+               'sssss': 'sssss.jpg',
     }
     return render(request, 'htmls/checkoutGETS.html',context)
 
 def search(request):
     squirrel_id = request.GET.get('search')
-    error_msg = ''
     try:
         squirrels = biaoge.objects.get(pk = squirrel_id)
     except:
         return render(request,'htmls/busuccess.html')
     else:
         squirrels = biaoge.objects.get(pk = squirrel_id)
-        context= {'squirrels':squirrels}
+        context= {'squirrels':squirrels,
+                    'sssss':'sssss.jpg',
+                    }
         return render(request, 'htmls/checkoutGETS.html',context)
 
 def overall(request):
@@ -283,4 +238,4 @@ def stats(request):
             'Runs_From': {'True':True_n, 'False':False_n},
             'Runs_From_pct': {'True':True_pct, 'False':False_pct},
             }
-    return render(request, 'htmls/stats2.html', {'context':context})
+    return render(request, 'htmls/stats3.html', {'context':context})
