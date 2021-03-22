@@ -1,6 +1,5 @@
 # Cute-Squirrels
-This is the final project for "Tool for Analytics"
-
+Squirrel Tracker Django project (group 49) for Tools for Analytics course
 
 If you run this first, you should run the following command
 
@@ -28,5 +27,5 @@ qq:408707751
 
 email:408707751@qq.com
 
-made by zzk
-
+                          made by zzk（晚秋秋）
+I am happy that you finally find this↑
