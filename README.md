@@ -24,7 +24,7 @@ The basic "runserver" command will significanly increase the occurrence of 502 e
 
 notice:if you want your new added squirrel to be shown on the mainpage, please check the option "have image".
 
-web page here: squirrel.icu
+web page here: http://squirrels.icu
 
 Instead of using google app engine, I used nginx-uwsgi-django to build my web, which is really stable! And That is why there are some uwsgi config files in this repository.
 
