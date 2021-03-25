@@ -34,49 +34,53 @@
     </style>
 
 
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">CuteSquirrel</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/map">Map</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/add">Add</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/overall">Overall</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/stats">Stats</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="/admin" tabindex="-1" aria-disabled="true">Admin</a>
+          </li>
+        </ul>
+        <form method="get" action="/search/" class="d-flex">
+          <input class="form-control me-2" type="search" name="search" placeholder="Type Squirrel ID" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">CuteSquirrels</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav me-auto mb-2 mb-md-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/map">Map</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/admin">Admin</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/overall">Overall</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/stats">Stats</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/add">Add</a>
-        </li>
-      </ul>
-      <form method="get" action="/search/" class="d-flex">
-        <input class="form-control me-3" type="search" name="search" placeholder="Type squirrel ID" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+      </div>
     </div>
-  </div>
-</nav>
-    
+  </nav>
+</header>
 
 
     <!-- Custom styles for this template -->
     <link href="{% static 'form-validation.css' %}" rel="stylesheet">
   </head>
   <body class="bg-light">
-    
+    <div><p><br></p></div>
 <div class="container">
   <main>
     <div class="py-5 text-center">

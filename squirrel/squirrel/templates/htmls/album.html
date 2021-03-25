@@ -31,6 +31,25 @@
           font-size: 3.5rem;
         }
       }
+
+      .frontimage {
+        box-sizing:border-box;
+        width:400px;
+        height:240px;
+        font-size:22px;
+        padding-top:100px;
+        overflow:hidden;
+        background:no-repeat center top / 100% 100%;
+        background-image:linear-gradient(to top, rgba(255,255,255,1), rgba(255,255,255,0)), url("{% get_media_prefix %}{{ sssss }}")
+      }
+
+      .container1{
+        box-sizing:border-box;
+		    
+        background:no-repeat right top / 60% 100%;
+        background-image:linear-gradient(to right, rgba(255,255,255,1), rgba(255,255,255,0)), url("{% get_media_prefix %}{{ suihua }}");
+	}
+
     </style>
 
     
@@ -68,7 +87,7 @@
       <a class="nav-link" href="/add" style="color:aliceblue" >Add</a>
       <a class="nav-link" href="/stats" style="color:aliceblue" >Stats</a>
       <form method="get" action="/search/" class="d-flex">
-        <input class="form-control me-3" type="search" name="search" placeholder="Type squirrel ID" aria-label="Search">
+        <input class="form-control me-2" type="search" name="search" placeholder="Type squirrel ID" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
@@ -81,16 +100,21 @@
 </header>
 
 <main>
-   <div class="py-5 container">
-    <div class="row py-lg-5">
-      <!--div class="col-lg-6 col-md-8 mx-auto"-->
-        <h1 class="fw-light">Cute Squirrels!</h1>
-        <p class="lead text-muted">The website can keep track of squirrels in the Central Park. You can view the squirrels in our map. Also, you can edit all squirrels listed in our site. The squirrel which you added will be shown immediately on the main pages.</p>
-      <!--/div-->
-    </div>
+
+  <div class="py-4 container1">
+     <div class="container">
+        <div class="row py-lg-5">
+          <h1 class="fw-light">Cute Squirrels!</h1>
+          <p class="lead text-muted">The website can keep track of 
+            squirrels in the Central Park. You can
+             view the squirrels in our map. Also, you can edit all 
+            squirrels listed in our site. The squirrel 
+            which you added will be shown 
+            immediately on the main pages.</p>
+        </div>
+     </div>
   </div>
 
-   <hr />
 
   <div class="container">
     <div class="row">

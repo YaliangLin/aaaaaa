@@ -28,7 +28,11 @@ def good(request):
     squirrels = biaoge.objects.filter(have_image = True)
     activities = ['Running', 'Chasing', 'Climbing', 'Eating', 'Foraging', 'Kuks', 'Quaas', 'Moans', 'Other activities','Approaches','Tail Twitches','Runs from','Nothing']
     context ={'squirrels':squirrels,
-              'activities': activities
+              'activities': activities,
+              'img1':'img1.PNG',
+              'img2':'img2.PNG',
+              'img3':'img3.JPG',
+              'img4':'img4.PNG',
     }
     return render(request,'htmls/mainbase.html',context)
 
@@ -133,7 +137,7 @@ def search(request):
 def overall(request):
     squirrels = biaoge.objects.order_by('Unique_Squirrel_ID')
     context = {'squirrels':squirrels,}
-    return render(request,'htmls/index2.html',context)
+    return render(request,'htmls/carousel_copy.html',context)
 
 def stats(request):
     sights = biaoge.objects.all()
@@ -189,4 +193,4 @@ def stats(request):
             'Runs_From': {'True':True_n, 'False':False_n},
             'Runs_From_pct': {'True':True_pct, 'False':False_pct},
             }
-    return render(request, 'htmls/stats3.html', {'context':context})
+    return render(request, 'htmls/newstats3.html', {'context':context})
