@@ -53,6 +53,10 @@
     </div>
   </header>
 
+  <div><br>
+  <p><br></p>
+  </div>
+
   <main class="px-3">
     <h1>Squirrel Stats</h1>
     <p class="lead">There are {{ context.Total }} squirrels in our website!</p>
@@ -63,10 +67,10 @@
 
   <div class="bd-example bg-white"  >
     <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action list-group-item-warning text-center">A simple primary list group item</a>
+    <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Counts of AM and PM</a>
      </div>
 <div>
-  <table class="table table-striped" >
+  <table class="table" >
     <thead>
     <tr>
       <th scope="col"></th>
@@ -92,7 +96,7 @@
 
 <div class="bd-example bg-white" >
     <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action list-group-item-primary text-center">Counts of juvenile and adult squirrels</a>
+    <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Counts of juvenile and adult squirrels</a>
      </div>
 <div>
   <table class="table table-striped" >
@@ -121,7 +125,7 @@
 
 <div class="bd-example bg-white" >
     <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action list-group-item-danger text-center">Counts of squirrels in different colors</a>
+    <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Counts of squirrels in different colors</a>
      </div>
 <div>
   <table class="table table-striped">
@@ -153,7 +157,7 @@
 
 <div class="bd-example bg-white">
     <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action list-group-item-success text-center">Counts of squirrels in different locations</a>
+    <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Counts of squirrels in different locations</a>
      </div>
 <div>
   <table class="table table-striped" >
@@ -182,24 +186,24 @@
 
 <div class="bd-example bg-white" >
     <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action list-group-item-info text-center">Counts of squirrels that run from people</a>
+    <a href="#" class="list-group-item list-group-item-action list-group-item-dark text-center">Counts of squirrels that run from people</a>
      </div>
 <div>
   <table class="table table-striped" >
     <thead>
-    <tr>
+      <tr>
       <th scope="col"></th>
       <th scope="col">True</th>
       <th scope="col">False</th>
     </tr>
     </thead>
     <tbody>
-    <tr>
+      <tr>
       <th scope="row">Run from people</th>
       <td>{{context.Runs_From.True}}</td>
 	  <td>{{context.Runs_From.False}}</td>
-    </tr>
-    <tr>
+  </tr>
+  <tr>
       <th scope="row">percentage %</th>
       <td>{{context.Runs_From_pct.True}}</td>
       <td>{{context.Runs_From_pct.False}}</td>
