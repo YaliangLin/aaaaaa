@@ -31,5 +31,3 @@ Instead of using google app engine, I used nginx-uwsgi-django to build my web, w
 qq:408707751
 
 email:408707751@qq.com
-
-晚秋秋~
