@@ -98,7 +98,7 @@
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="latitude" class="form-label">Latitude</label>
-              <input type="text" class="form-control" id="latitude" placeholder="" value="{{ squirrels.xx }}" name = "latitude" required pattern="[0-9]">
+              <input type="text" class="form-control" id="latitude" placeholder="" value="{{ squirrels.xx }}" name = "latitude" required pattern="^[-+]?[0-9]*\.?[0-9]+$">
               <div class="invalid-feedback">
                 Latitude is not correct.
               </div>
@@ -106,7 +106,7 @@
 
             <div class="col-sm-6">
               <label for="longtitude" class="form-label">Longtitude</label>
-              <input type="text" class="form-control" id="longtitude" placeholder="" value="{{ squirrels.yy }}" name = "longtitude" required pattern="[0-9]">
+              <input type="text" class="form-control" id="longtitude" placeholder="" value="{{ squirrels.yy }}" name = "longtitude" required pattern="^[-+]?[0-9]*\.?[0-9]+$">
               <div class="invalid-feedback">
                 Longtitude is not correct.
               </div>
