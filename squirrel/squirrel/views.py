@@ -70,38 +70,70 @@ def add(request):
         context= {'sssss':'sssss.jpg'}
         return render(request, 'htmls/add.html',context)
 
+#the following code is complicated because I want to fix the bug
+#about editing the squirrels. When uploading an squirrel without
+#changing it's picture, it will remove the exist image of squirrel.
+#And if I run the following command "profile_image = profile_image"
+#the image will be translated into "string" and removed. So I have
+#to do it to fix the problem.
 
 def edit(request,squirrel_id):
     test1 = biaoge.objects.get(pk = squirrel_id)
     if request.method == "POST":
-        test1 = biaoge(
-        xx = request.POST.get('latitude',0),
-        yy = request.POST.get('longtitude',0),
-        Unique_Squirrel_ID = request.POST.get('Unique_Squirrel_ID',00-0000-00-00),
-        shift = request.POST.get('shift',None),
-        date = request.POST.get('date',1111-11-11),
-        age = request.POST.get('age',None),
-        primary_fur_color = request.POST.get('primary_fur_color',None),
-        location = request.POST.get('location',None),
-        specific_location = request.POST.get('specific_location',None),
-        running = request.POST.get('running',False),
-        chasing = request.POST.get('chasing',False),
-        climbing = request.POST.get('climbing',False),
-        eating = request.POST.get('eating',False),
-        foraging = request.POST.get('foraging',False),
-        other_activities = request.POST.get('other_activities',None),
-        kuks = request.POST.get('kuks',False),
-        quaas = request.POST.get('quaas',False),
-        tail_flags = request.POST.get('tail_flags',False),
-        tail_twitches = request.POST.get('tail_twitches',False),
-        approaches = request.POST.get('approaches',False),
-        indifferent = request.POST.get('indifferent',False),
-        runs_from = request.POST.get('runs_from',False),
-        moans = request.POST.get('moans',False),
-        profile_image= request.FILES.get('profile_image',None),
-        have_image = request.POST.get('have_image',False),
-        )
-        test1.save()
+        if request.FILES.get('profile_image',None) is None:
+            test1.xx = request.POST.get('latitude',0)
+            test1.yy = request.POST.get('longtitude',0)
+            test1.Unique_Squirrel_ID = request.POST.get('Unique_Squirrel_ID',00-0000-00-00)
+            test1.shift = request.POST.get('shift',None)
+            test1.date = request.POST.get('date',1111-11-11)
+            test1.age = request.POST.get('age',None)
+            test1.primary_fur_color = request.POST.get('primary_fur_color',None)
+            test1.location = request.POST.get('location',None)
+            test1.specific_location = request.POST.get('specific_location',None)
+            test1.running = request.POST.get('running',False)
+            test1.chasing = request.POST.get('chasing',False)
+            test1.climbing = request.POST.get('climbing',False)
+            test1.eating = request.POST.get('eating',False)
+            test1.foraging = request.POST.get('foraging',False)
+            test1.other_activities = request.POST.get('other_activities',None)
+            test1.kuks = request.POST.get('kuks',False)
+            test1.quaas = request.POST.get('quaas',False)
+            test1.tail_flags = request.POST.get('tail_flags',False)
+            test1.tail_twitches = request.POST.get('tail_twitches',False)
+            test1.approaches = request.POST.get('approaches',False)
+            test1.indifferent = request.POST.get('indifferent',False)
+            test1.runs_from = request.POST.get('runs_from',False)
+            test1.moans = request.POST.get('moans',False)
+            #test1.profile_image= request.FILES.get('profile_image',None)
+            test1.have_image = request.POST.get('have_image',False)
+            test1.save()
+        else:
+            test1.xx = request.POST.get('latitude',0),
+            test1.yy = request.POST.get('longtitude',0),
+            test1.Unique_Squirrel_ID = request.POST.get('Unique_Squirrel_ID',00-0000-00-00),
+            test1.shift = request.POST.get('shift',None),
+            test1.date = request.POST.get('date',1111-11-11),
+            test1.age = request.POST.get('age',None),
+            test1.primary_fur_color = request.POST.get('primary_fur_color',None),
+            test1.location = request.POST.get('location',None),
+            test1.specific_location = request.POST.get('specific_location',None),
+            test1.running = request.POST.get('running',False),
+            test1.chasing = request.POST.get('chasing',False),
+            test1.climbing = request.POST.get('climbing',False),
+            test1.eating = request.POST.get('eating',False),
+            test1.foraging = request.POST.get('foraging',False),
+            test1.other_activities = request.POST.get('other_activities',None),
+            test1.kuks = request.POST.get('kuks',False),
+            test1.quaas = request.POST.get('quaas',False),
+            test1.tail_flags = request.POST.get('tail_flags',False),
+            test1.tail_twitches = request.POST.get('tail_twitches',False),
+            test1.approaches = request.POST.get('approaches',False),
+            test1.indifferent = request.POST.get('indifferent',False),
+            test1.runs_from = request.POST.get('runs_from',False),
+            test1.moans = request.POST.get('moans',False),
+            test1.profile_image= request.FILES.get('profile_image',None),
+            test1.have_image = request.POST.get('have_image',False),
+            test1.save()
         return redirect(f'/success')
     else:
         context = {'squirrels':test1,
