@@ -28,6 +28,5 @@ web page here: http://squirrels.icu
 
 Instead of using google app engine, I used nginx-uwsgi-django to build my web, which is really stable! And That is why there are some uwsgi config files in this repository.
 
-qq:408707751
 
 email:408707751@qq.com
