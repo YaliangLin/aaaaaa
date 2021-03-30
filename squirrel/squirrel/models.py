@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils.translation import gettext as _
 from django.core.files.storage import FileSystemStorage
 from django.conf import settings
 
