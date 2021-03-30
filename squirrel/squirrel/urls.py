@@ -14,29 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
 from . import views
-import csv
-import datetime
-import os
 from .models import biaoge
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-from django.contrib import staticfiles, admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path
-from django.views.static import serve
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',views.good),
+    path('',views.mainmenu),
     path('map/',views.map),
-    #path('add/',views.add),
-    path('status/<str:squirrel_id>/', views.goodview),
-    path('status/<str:squirrel_id>/edit/', views.goodedit),
-    path('add/',views.goodadd),
+    #path('sightings/<str:squirrel_id>/', views.goodview),
+    path('sightings/add/',views.add),
     path('success/',views.success),
     re_path(r'^search/$', views.search, name='search'),
-    path('overall/',views.overall),
-    path('stats/',views.stats)
+    path('sightings/',views.sightings),
+    path('sightings/stats/',views.stats),
+    path('sightings/<str:squirrel_id>/', views.edit),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
